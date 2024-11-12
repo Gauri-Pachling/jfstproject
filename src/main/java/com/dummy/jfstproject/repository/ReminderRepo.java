@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface ReminderRepo extends JpaRepository<Reminder, Long> {
-    List<Reminder> findByUserId(Long userId);
+    List<Reminder> findByUserId(Long userId);   
 }

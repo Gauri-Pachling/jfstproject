@@ -21,7 +21,4 @@ public class ReminderService {
         return reminderRepo.findByUserId(userId);
     }
 
-    public List<Reminder> getAllReminders() {
-        return reminderRepo.findAll();
-    }
 }

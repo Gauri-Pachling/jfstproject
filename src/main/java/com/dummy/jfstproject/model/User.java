@@ -1,12 +1,7 @@
 package com.dummy.jfstproject.model;
 
 
-import java.util.Collection;
-import java.util.List;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="user")
-public class User implements UserDetails{
+public class User{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto increment id of user table 
@@ -33,11 +28,7 @@ public class User implements UserDetails{
 
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        // You can return roles or authorities here
-        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
-    }
+
 
     public User(Long id, String username, String email, String password) {
         this.id = id;

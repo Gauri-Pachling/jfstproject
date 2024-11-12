@@ -25,33 +25,12 @@ public class JwtUtil {
     // Generate a JWT token for the username
     public String generateToken(String username) {
         return Jwts.builder()
-                .setSubject(username)
-                .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + expirationMs))
+                .subject(username)
+                .issuedAt(new Date())
+                .expiration(new Date(System.currentTimeMillis() + expirationMs))
                 .signWith(getSigningKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
 
-    // Extract the username from the JWT token
-    public String extractUsername(String token) {
-        return Jwts.parser() // Updated method to use parserBuilder
-                .setSigningKey(getSigningKey())
-                .build()
-                .parseClaimsJws(token)
-                .getBody()
-                .getSubject();
-    }
 
-    // Validate the JWT token
-    public boolean validateToken(String token) {
-        try {
-            Jwts.parser() // Updated method to use parserBuilder
-                    .setSigningKey(getSigningKey())
-                    .build()
-                    .parseClaimsJws(token);
-            return true;
-        } catch (JwtException e) {
-            return false; // Token is invalid
-        }
-    }
 }
