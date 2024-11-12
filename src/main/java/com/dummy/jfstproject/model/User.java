@@ -20,7 +20,7 @@ import jakarta.persistence.Table;
 public class User implements UserDetails{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto increment id of user table 
     private Long id;
 
     @Column(name = "username")
