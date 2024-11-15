@@ -13,6 +13,11 @@ public class Reminder {
     private String title;
     private String description;
 
+    private boolean notified = false;
+
+    public boolean isNotified() {
+        return notified;
+    }
     @Temporal(TemporalType.TIMESTAMP)
     private Date dueDate;
 
@@ -44,4 +49,8 @@ public class Reminder {
 
     public User getUser() { return user; }
     public void setUser(User user) { this.user = user; }
+    public void setNotified(boolean b) {
+        // TODO Auto-generated method stub
+        this.notified = b;
+    }
 }
