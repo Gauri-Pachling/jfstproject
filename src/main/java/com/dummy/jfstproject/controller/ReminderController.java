@@ -62,16 +62,16 @@ public class ReminderController {
         // Proceed to save the reminder after associating it with the user
         Reminder createdReminder = reminderService.saveReminder(reminder);
 
-        try {
-            emailService.sendEmail(
-                user.getEmail(),
-                "New Reminder Created",
-                "Reminder Title: " + reminder.getTitle() + "\nDescription: " + reminder.getDescription()
-            );
-            System.out.println("Reminder creation email sent successfully.");
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
+        // try {
+        //     emailService.sendEmail(
+        //         user.getEmail(),
+        //         "New Reminder Created",
+        //         "Reminder Title: " + reminder.getTitle() + "\nDescription: " + reminder.getDescription()
+        //     );
+        //     System.out.println("Reminder creation email sent successfully.");
+        // } catch (MessagingException e) {
+        //     e.printStackTrace();
+        // }
 
 
         return ResponseEntity.status(HttpStatus.CREATED).body(createdReminder);

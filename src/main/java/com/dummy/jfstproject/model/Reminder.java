@@ -15,7 +15,7 @@ public class Reminder {
 
     private boolean notified = false;
 
-    public boolean isNotified() {
+    public boolean getNotified() {
         return notified;
     }
     @Temporal(TemporalType.TIMESTAMP)

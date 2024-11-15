@@ -15,7 +15,7 @@ public class EmailService {
     private JavaMailSender mailSender;
 
     @Value("${spring.mail.properties.mail.smtp.from}")
-    private String senderEmail; // Ensure this property exists in application.properties
+    private String senderEmail;
 
     public void sendEmail(String to, String subject, String content) throws MessagingException {
         MimeMessage message = mailSender.createMimeMessage();
